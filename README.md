@@ -12,19 +12,20 @@
 -   [Introduction to R and RStudio](Introduction-to-R-and-RStudio.html) (best to download this and open it in a browser)
 
 **Reference Scripts**:
--   [My First Notebook!](scripts/my-first-notebook.html)
--   [Intro to the Tidyverse](scripts/intro-to-tidyverse.html)
+-   [My First Notebook!](scripts/1-my-first-notebook.html)
+-   [Intro to the Tidyverse](scripts/2-intro-to-tidyverse.html)
 
 ## Day 2
 **Goals**: Wrangle that data! We’ll import a csv and an excel file, and walk through the fundamentals: sorting, filtering, grouping, summarizing.
 
 **Resources**:  
--   [R Functions tipsheet](docs/R-Functions.html)
--   [Dplyr cheat sheet](docs/data-transformation.pdf)
+-   [R Functions tipsheet](R-Functions.html)
+-   [Dplyr cheat sheet](tipsheets/data-transformation.pdf)
 
 **Reference Scripts**:
--   [Importing](scripts/importing.html)
--   [Sorting, filtering, and summarizing](sorting-filtering-summarizing.html)
+-   [Importing](scripts/3-importing.html)
+-   [Sorting, filtering, and summarizing](scripts/4-sorting-filtering-summarizing.html)
+-   [Grouping with salaries](scripts/5-group-by-salaries.html)
 
 ## Day 3
 **Goals**: Joining. Learn how to work with multiple tables. Reinforce main analysis functions from Day 2.
@@ -33,16 +34,18 @@
 -   [Slides about different kinds of joins](https://docs.google.com/presentation/d/1QrOmy7QIxlBP1DF-ltC33I9VkQ5PJyu6nfyWGC6Qb64/edit?usp=sharing)
  
 **Reference Scripts**:
--	[Joining tables]()
+-	[Joining tables](scripts/6-joins.html)
+-   [Using grepl](scripts/7-grepl.html)
 
 ## Day 4
 **Goals**: Make tidy data! We often get data that is messy, dirty, misshapen, missing values, etc. We’ll cover best practices and helpful functions for cleaning data.
 
 
 **Resources**:  
--   [Tidyr cheat sheet](docs/tidyr.pdf)
--   [Stringr cheat sheet](docs/strings.pdf)
--	[Lubridate cheat sheet](docs/lubridate.pdf)
+-   [Tidyr cheat sheet](tipsheets/tidyr.pdf)
+-   [Stringr cheat sheet](tipsheets/strings.pdf)
+-	[Lubridate cheat sheet](tipsheets/lubridate.pdf)
 
 **Reference Scripts**:
--   [Cleaning dirty data]()
+-   [Cleaning dirty data](8-cleaning-data.html)
+-   [Graphing data in R](9-graphing.html)
