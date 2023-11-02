@@ -9,7 +9,7 @@
 -   Mapping Sinclair TV stations [story](https://www.washingtonpost.com/graphics/2018/lifestyle/sinclair-broadcasting/), [analysis](https://r-journalism.com/posts/2018-07-17-sf-sinclair-map/map/)
 
 **Resources**:  
--   [Introduction to R and RStudio](Introduction-to-R-and-RStudio.html) (best to download this and open it in a browser)
+-   [Introduction to R and RStudio](intro-to-r-and-rstudio.html) (best to download this and open it in a browser)
 
 **Reference Scripts**:
 -   [My First Notebook!](scripts/1-my-first-notebook.html)
