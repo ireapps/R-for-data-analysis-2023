@@ -1,0 +1,61 @@
+---
+title: "Graphing with ggplot2"
+output:
+  html_document:
+    df_print: paged
+---
+
+```{r}
+library(tidyverse) #ggplot2 is the main package in tidyverse we'll be using here
+```
+
+```{r}
+disney <- read_csv("https://github.com/r-journalism/chjr/raw/main/docs/slides_data/disney_movies_total_gross.csv")
+
+# necessary transformations on the data: 
+disney <- disney %>% 
+  mutate(new_total_gross = parse_number(total_gross),
+         new_inflation_gross = parse_number(inflation_adjusted_gross),
+         new_release_date = mdy(release_date))
+```
+
+You can do a LOT with ggplot2 to create complex, customized graphics. But it's also fairly simple to plot some data to help you visualize it for analysis. You need these three necessary layers: 
+- data
+- coordinates
+- geoms (shapes)
+
+For this exercise, `disney` is the data. Here's a basic point plot of all disney movies where the x axis is release date and the y axis is inflation adjusted gross:
+
+```{r}
+disney %>% 
+  ggplot(aes(x=new_release_date,y=new_inflation_gross)) +
+  geom_point()
+```
+
+See Snow White and the Seven Dwarfs in the upper left-hand corner? We can add a little context to this by color-coding the dots (each of which is a movie) by genre, one of the columns in our data:
+```{r}
+disney %>% 
+  ggplot(aes(x=new_release_date,y=new_inflation_gross, color=genre)) +
+  geom_point()
+```
+There are many different kinds of geoms you can use with ggplot; a good starting point is using the ggplot cheat sheet (data_visualization.pdf in the tipsheets folder) and try different geoms based on whether you are using one, two or three variables and whether they are continues (dates and numbers) or discrete (text buckets). 
+
+With ggplot2 you can also limit the scale of the x or y axis, reformat labels, add a title and subtitle, and much much more. As a rudimentary example (I'm no graphics expert), here I've limited the y axis to only movies between 1980 and 2020 and the y axis to dollars between 0 and $1B (eliminating the outliers), and formatted the y labels to reflect dollars: 
+
+```{r}
+disney %>% 
+  ggplot(aes(x=new_release_date, y=new_inflation_gross, color=genre)) +
+  geom_point() +
+  scale_x_date(limits=c(ymd("1980-01-01","2020-01-01"))) +
+  scale_y_continuous(limits=c(0,1000000000), labels=scales::dollar_format())
+```
+And finally, if I want to separate out genres into their own graphs (rather than color-coding them in one graph), I can use facet_wrap():
+```{r}
+disney %>% 
+  ggplot(aes(x=new_release_date, y=new_inflation_gross, color=genre)) +
+  geom_point() +
+  scale_x_date(limits=c(ymd("1980-01-01","2020-01-01"))) +
+  scale_y_continuous(limits=c(0,1000000000), labels=scales::dollar_format()) +
+  facet_wrap(~genre)
+```
+This is just scratching the surface of ggplot2; if you're interested in graphics, keep exploring! Start with the ggplot2 cheat sheet (data_visualizations.pdf in the tipsheets folder).
